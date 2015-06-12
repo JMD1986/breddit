@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   get '/signup', to: "users#new"
 
   get '/login', to: "sessions#new", as: 'login'
-  post '/login', to: "session#create", as: 'create_session'
-  get '/logout', to: "session#destroy", as: 'logout'
+  post '/login', to: "sessions#create", as: 'create_session'
+  get '/logout', to: "sessions#destroy", as: 'logout'
+
+  root 'boards#index'
 
 #       Prefix Verb   URI Pattern                  Controller#Action
 #        votes GET    /votes(.:format)             votes#index
