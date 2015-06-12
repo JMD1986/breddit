@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
   resources :votes
   resources :comments
   resources :links
@@ -7,9 +8,9 @@ Rails.application.routes.draw do
 
   get '/signup', to: "users#new"
 
-  get '/login', to: "sessions#new"
-  post '/login', to: "session#create"
-  get '/logout', to: "session#destroy"
+  get '/login', to: "sessions#new", as: 'login'
+  post '/login', to: "session#create", as: 'create_session'
+  get '/logout', to: "session#destroy", as: 'logout'
 
 #       Prefix Verb   URI Pattern                  Controller#Action
 #        votes GET    /votes(.:format)             votes#index
