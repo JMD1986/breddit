@@ -19,8 +19,18 @@
     <![endif]-->
   </head>
   <body>
-
+    <header>
+      <div class="header_image">
+        <a href="/boards"><%= image_tag("Sandwich_32.png", :alt => "Breddit") %> Breddit.com
+</a>
+      </div>
+      <div class="header_login_area">
+        <a href="users/login">Log In</a>
+      </div>
+      <div class="header_search_bar">
+      </div>
   <%= yield %>
-
+<footer>
+</footer>
 </body>
 </html>
