@@ -11,8 +11,8 @@ class SessionsController < ApplicationController
     else
       flash[:alert] = "Email or password did not match"
       render :new
-    end#if
-  end#create
+    end #if
+  end #create
 
   def destroy
     session[:user_id] = nil
