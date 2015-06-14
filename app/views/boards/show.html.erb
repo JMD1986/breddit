@@ -6,8 +6,7 @@
 </p>
 
 <% @board.links.each do |link| %>
-<p><%=link_to link.title, link%></p>
-<p><%=link_to "comments", link %></p>
+<p><%=link_to link.title, link%> | <%= link.user.name %></p>
 <% end %>
 
 <%= link_to 'Back', boards_path %>

@@ -17,7 +17,7 @@
     <% @links.each do |link| %>
       <tr>
         <td>
-          <%= link_to "+", votes_path(:vote => {:link_id => link.id, :upvote => true}), :method => :post %>
+          <%= link_to image_tag("Bread_toaster_16.png"), votes_path(:vote => {:link_id => link.id, :upvote => true}), :method => :post %>
         </td>
         <td><%= link_to link.title, link %></td>
         <td><%= link_to link.user.name, link.user %></td>

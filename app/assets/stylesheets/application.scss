@@ -26,10 +26,24 @@ body {
   right: 0px;
   height: 100%;
   bottom: 0px;
+  color:#C9C9C9;
+  padding: 10px;
+  margin-top: -5px;
+  word-spacing: 150%;
+  line-height: 150%;
+  font-size: 20px;
+}
+
+.side_panel_image {
+  margin: 0 auto;
 }
 .header_image {
   float: left;
   padding-left: 20px;
+  font-size: 20px;
+}
+
+.header_login_area {
   font-size: 20px;
 }
 

@@ -13,8 +13,8 @@
 
 <%= f.select :board_id, Board.all.map { |b| [b.topic, b.id]}, class: "drop-down" %>
 <p>
-<%= f.submit "New Bred", class: "submit-button" %>
+<%= f.submit "New Bred", class: "submit-button"%>
 </p>
-<%= link_to 'Back', links_path %>
+<%= link_to 'Back', root_path %>
 
 <% end %>
