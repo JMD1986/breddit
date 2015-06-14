@@ -6,11 +6,14 @@ class BoardsController < ApplicationController
   def index
 
     @boards = Board.all
+    @board = Board.new
   end
 
   # GET /boards/1
   # GET /boards/1.json
   def show
+    @board = Board.find(params[:id])
+    @link = Link.new
   end
 
   # GET /boards/new

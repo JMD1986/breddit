@@ -4,7 +4,10 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
+    authenticate_user!
     @links = Link.all.sort_by { |link| link.votes.count }.reverse
+    @vote = vote.new
+    @comment = comment.new
   end
 
   # GET /links/1
@@ -24,6 +27,8 @@ class LinksController < ApplicationController
 
   # GET /links/1/edit
   def edit
+    authenticate_user!
+    @link = Link.find(params[:id])
   end
 
   # POST /links
