@@ -15,6 +15,19 @@
   <%= @link.user.name %>
 </p>
 
+<fieldset>
+<legend>Comments:</legend>
+<div>
+  <% @link.comments.each do |comment| %>
+  <fieldset>
+    <legend>User</legend>
+    <p><%= comment.user.name %> </p>
+    <legend>Comment</legend>
+    <p><%= comment.body %></p>
+    </fieldset>
+  <% end %>
+</div>
+</fieldset>
 
 <%= form_for(@comment) do |f| %>
   <% if @comment.errors.any? %>
@@ -28,15 +41,15 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :body %><br />
+    <%= f.label :body %>
+    <%= f.hidden_field :link_id, :value => @link.id %>
     <%= f.text_area :body, placeholder: "Tell us how you really feel" %>
+
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
-  <%= f.hidden_field :link_id, :value => @link.id %>
 
 <% end %>
 

@@ -10,7 +10,17 @@ header {
 }
 
 body {
+  color: #3B3A3A;
+}
 
+.side_panel {
+  background-color: #3B3A3A;
+  display: inline-block;
+  width: 200px;
+  float: right;
+  right: 0px;
+  height: 100%;
+  bottom: 0px;
 }
 .header_image {
   float: left;
