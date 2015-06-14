@@ -14,6 +14,7 @@ class VotesController < ApplicationController
 
   # GET /votes/new
   def new
+    authenticate_user!
     @vote = Vote.new
   end
 
@@ -28,8 +29,7 @@ class VotesController < ApplicationController
 
     respond_to do |format|
       if @vote.save
-        format.html { redirect_to @vote, notice: 'Vote was successfully created.' }
-        format.json { render :show, status: :created, location: @vote }
+        redirect_to :back
       else
         format.html { render :new }
         format.json { render json: @vote.errors, status: :unprocessable_entity }

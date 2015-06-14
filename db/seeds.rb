@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+boards = Board.create([{topic :totally "subjective opinions stated as fact"}, {topic:, "libertarian pipedreams"}, {topic:, "argue with a stranger"}, {topic: "sweeping generalizations"}])

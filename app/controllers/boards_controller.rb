@@ -4,6 +4,7 @@ class BoardsController < ApplicationController
   # GET /boards
   # GET /boards.json
   def index
+
     @boards = Board.all
   end
 
@@ -14,6 +15,8 @@ class BoardsController < ApplicationController
 
   # GET /boards/new
   def new
+    authenticate_user!
+
     @board = Board.new
   end
 
@@ -24,6 +27,8 @@ class BoardsController < ApplicationController
   # POST /boards
   # POST /boards.json
   def create
+    authenticate_user!
+
     @board = Board.new(board_params)
 
     respond_to do |format|
@@ -40,6 +45,8 @@ class BoardsController < ApplicationController
   # PATCH/PUT /boards/1
   # PATCH/PUT /boards/1.json
   def update
+    authenticate_user!
+
     respond_to do |format|
       if @board.update(board_params)
         format.html { redirect_to @board, notice: 'Board was successfully updated.' }
@@ -54,6 +61,8 @@ class BoardsController < ApplicationController
   # DELETE /boards/1
   # DELETE /boards/1.json
   def destroy
+    authenticate_user!
+
     @board.destroy
     respond_to do |format|
       format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
