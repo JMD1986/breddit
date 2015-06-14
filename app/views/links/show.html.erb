@@ -15,8 +15,10 @@
   <%= @link.user.name %>
 </p>
 
+
 <fieldset>
 <div>
+  <p><strong>Replys:</strong> <%= @link.comments.count %></p>
   <% @link.comments.each do |comment| %>
   <fieldset>
     <legend>User</legend>
@@ -43,6 +45,7 @@
   <div class="field">
     <%= f.label :body %>
     <%= f.hidden_field :link_id, :value => @link.id %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.text_area :body, placeholder: "Tell us how you really feel" %>
 
   </div>

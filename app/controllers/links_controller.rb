@@ -8,7 +8,7 @@ class LinksController < ApplicationController
     @links = Link.all.sort_by { |link| link.votes.count }.reverse
     @vote = Vote.new
     @comment = Comment.new
-    @user = User.all
+    @user = current_user
   end
 
   # GET /links/1
@@ -17,8 +17,6 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @comment = Comment.new
     @user = current_user
-    # @comments = Comment.
-    # @vote = Vote.new
   end
 
   # GET /links/new

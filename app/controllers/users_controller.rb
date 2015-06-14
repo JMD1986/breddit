@@ -10,12 +10,13 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+    @comment = comment.find(params[:id])
+    @user = current_user
   end
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = current_user
   end
 
   # GET /users/1/edit
