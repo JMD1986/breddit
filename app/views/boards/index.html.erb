@@ -25,3 +25,13 @@
 <br>
 
 <%= link_to 'New Board', new_board_path %>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @board.topic %>
+</p>
+
+<% @board.links.each do |link| %>
+<p><%=link_to link.title, link%></p>
+<p><%=link_to "comments", link %></p>
+<% end %>
