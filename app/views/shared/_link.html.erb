@@ -2,15 +2,21 @@
 
 <%= form_for(@link) do |f| %>
 <%= f.hidden_field :user_id, value: session[:user_id] %>
-<fieldset>
-  <legend>Title</legend>
-  <%= f.text_field :title, placeholder: "Check This Out!", class: "comment-field"%>
-</fieldset>
-<fieldset>
-  <legend>Link/Self Post</legend>
-  <%= f.text_area :info, placeholder: "URL or Link", class: "comment-field"%>
-</fieldset>
-
+<p>
+  <%= f.label :info, "Info:", class: "label" %>
+</p>
+<p>
+  <%= f.text_area :info, class: "comment-field"%>
+</p>
+<p>
+  <%= f.label :info, "Info:", class: "label" %>
+</p>
+<p>
+  <%= f.text_area :info, class: "comment-field"%>
+</p>
+<p>
+  <%= f.label :board, "Board:", class: "label" %>
+</p>
 <%= f.select :board_id, Board.all.map { |b| [b.topic, b.id]}, class: "drop-down" %>
 <p>
 <%= f.submit "New Bred", class: "submit-button" %>
