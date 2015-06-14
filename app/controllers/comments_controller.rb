@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
   def create
     authenticate_user!
 
-    @comment = Comment.new(:comment)
+    @comment = current_user.comments.create(params[:comment])
 
     respond_to do |format|
       if @comment.save

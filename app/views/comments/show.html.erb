@@ -1,19 +1,21 @@
-<p id="notice"><%= notice %></p>
+<%= form_for(@comment) do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
 
-<p>
-  <strong>Body:</strong>
-  <%= @comment.body %>
-</p>
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
-<p>
-  <strong>Link:</strong>
-  <%= @comment.link %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @comment.user %>
-</p>
-
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body, placeholder: "Tell us how you really feel" %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
