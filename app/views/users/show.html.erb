@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <p>
-  <
+  <h2>Profile</h2>
 </p>
 <p>
   <strong>Name:</strong>
@@ -12,6 +12,15 @@
   <%= @user.email %>
 </p>
 
+<p>
+  <strong>Comment Count:</strong>
+  <%= @user.comments.count %>
+</p>
+
+<p>
+  <strong>Links submitted</strong>
+  <%= @user.links.count %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

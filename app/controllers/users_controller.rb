@@ -10,8 +10,9 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @comment = comment.find(params[:id])
+    @comment = Comment.all
     @user = current_user
+    @posts = Comment.all
   end
 
   # GET /users/new
