@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<p id="#{@link.topic}"><%= notice %></p>
 
 <p>
   <strong>Title:</strong>
@@ -15,10 +15,6 @@
   <%= @link.user.name %>
 </p>
 
-<p>
-  <strong>Board:</strong>
-  <%= @link.board.topic %>
-</p>
 
 <%= form_for(@comment) do |f| %>
   <% if @comment.errors.any? %>
@@ -40,6 +36,8 @@
   <div class="actions">
     <%= f.submit %>
   </div>
+  <%= f.hidden_field :link_id, :value => @link.id %>
+
 <% end %>
 
 <%= link_to 'Edit', edit_link_path(@link) %> |

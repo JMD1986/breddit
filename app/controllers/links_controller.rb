@@ -13,10 +13,10 @@ class LinksController < ApplicationController
   # GET /links/1
   # GET /links/1.json
   def show
-    authenticate_user!
     @link = Link.find(params[:id])
     @comment = Comment.new
-    @vote = Vote.new
+    # @comments = Comment.
+    # @vote = Vote.new
   end
 
   # GET /links/new
@@ -75,6 +75,7 @@ class LinksController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.

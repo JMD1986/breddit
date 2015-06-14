@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get '/logout', to: "sessions#destroy", as: 'logout'
   get '/frontpage', to: "boards#frontpage"
 
-  root 'links#index'
+  root 'boards#index'
 
 #       Prefix Verb   URI Pattern                  Controller#Action
 #        votes GET    /votes(.:format)             votes#index

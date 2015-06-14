@@ -7,6 +7,9 @@ class BoardsController < ApplicationController
 
     @boards = Board.all
     @board = Board.new
+    @links = Link.all.sort_by { |link| link.votes.count }.reverse
+    @vote = Vote.new
+    @comment = Comment.new
   end
 
   def frontpage
