@@ -5,7 +5,10 @@
   <%= @board.topic %>
 </p>
 
-<%link_to boards.
+<% @board.links.each do |link| %>
+<%= link.title %>
 
 <%= link_to 'Edit', edit_board_path(@board) %> |
 <%= link_to 'Back', boards_path %>
+
+<% end %>
