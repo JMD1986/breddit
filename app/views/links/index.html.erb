@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Toasts</th>
       <th>Title</th>
       <th>User</th>
       <th>Board</th>
@@ -15,9 +16,10 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link.title %></td>
-        <td><%= link.user.name %></td>
-        <td><%= link.board.topic %></td>
+        <td><%= link_to link.title, link %></td>
+        <td><%= link_to link.title, link %></td>
+        <td><%= link_to link.user.name, link.user %></td>
+        <td><%= link_to link.board.topic, link.board %></td>
         <td><%= link_to 'Show', link %></td>
         <td><%= link_to 'Edit', edit_link_path(link) %></td>
         <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
