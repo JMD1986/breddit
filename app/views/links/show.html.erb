@@ -16,14 +16,13 @@
 </p>
 
 <fieldset>
-<legend>Comments:</legend>
 <div>
   <% @link.comments.each do |comment| %>
   <fieldset>
     <legend>User</legend>
     <p><%= comment.user.name %> </p>
     <legend>Comment</legend>
-    <p><%= comment.body %></p>
+    <p> <%= comment.body %></p>
     </fieldset>
   <% end %>
 </div>

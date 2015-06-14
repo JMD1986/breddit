@@ -16,13 +16,13 @@
   <tbody>
     <% @links.each do |link| %>
       <tr>
-        <td><%= link_to link.title, link %></td>
+        <td>
+          <%= link_to "+", votes_path(:vote => {:link_id => link.id, :upvote => true}), :method => :post %>
+        </td>
         <td><%= link_to link.title, link %></td>
         <td><%= link_to link.user.name, link.user %></td>
         <td><%= link_to link.board.topic, link.board %></td>
-        <td><%= link_to 'Show', link %></td>
-        <td><%= link_to 'Edit', edit_link_path(link) %></td>
-        <td><%= link_to 'Destroy', link, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
