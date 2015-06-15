@@ -1,75 +1,35 @@
-class VotesController < ApplicationController
-  before_action :set_vote, only: [:show, :edit, :update, :destroy]
+# class CommentsController < ApplicationController
+#   before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
-  # GET /votes
-  # GET /votes.json
-  def index
-    @votes = Vote.all
-  end
 
-  # GET /votes/1
-  # GET /votes/1.json
-  def show
-  end
 
-  # GET /votes/new
-  def new
-    authenticate_user!
-    @vote = Vote.new
-  end
+#   # POST /comments
+#   # POST /comments.json
+#   def create
+#     authenticate_user!
 
-  # GET /votes/1/edit
-  def edit
-  end
+#     @vote = Vote.new(comment_params)
 
-  # POST /votes
-  # POST /votes.json
-  def create
-    authenticate_user!
-    @vote = Vote.new(vote_params)
+#     respond_to do |format|
+#       if @comment.save
+#         format.html { redirect_to :back }
+#         format.json { render :show, status: :created, location: @comment }
+#       else
+#         format.html { render :new }
+#         format.json { render json: @comment.errors, status: :unprocessable_entity }
+#       end
+#     end
+#   end
 
-    respond_to do |format|
-      if @vote.save
-        redirect_to :back
-      else
-        format.html { render :new }
-        format.json { render json: @vote.errors, status: :unprocessable_entity }
-      end
-    end
-  end
 
-  # PATCH/PUT /votes/1
-  # PATCH/PUT /votes/1.json
-  def update
-    respond_to do |format|
-      if @vote.update(vote_params)
-        format.html { redirect_to @vote, notice: 'Vote was successfully updated.' }
-        format.json { render :show, status: :ok, location: @vote }
-      else
-        format.html { render :edit }
-        format.json { render json: @vote.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+#   private
+#     # Use callbacks to share common setup or constraints between actions.
+#     def set_comment
+#       @vote = Vote.find(params[:id])
+#     end
 
-  # DELETE /votes/1
-  # DELETE /votes/1.json
-  def destroy
-    @vote.destroy
-    respond_to do |format|
-      format.html { redirect_to votes_url, notice: 'Vote was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_vote
-      @vote = Vote.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def vote_params
-      params.require(:vote).permit(:number, :comment_id, :link_id, :user_id)
-    end
-end
+#     # Never trust parameters from the scary internet, only allow the white list through.
+#     def comment_params
+#       params.require(:vote).permit(:body, :link_id, :user_id)
+#     end
+# end
