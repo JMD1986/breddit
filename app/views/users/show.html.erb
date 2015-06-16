@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <h2>Profile</h2>
-</p>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <div class="board_topic">
+        <%= @user.name %>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-3">Email</div>
+    <div class="col-md-3">Comment Count</div>
+    <div class="col-md-3"> Total Posts</div>
+  </div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+  <div class = "row">
+    <div class="col-md-3">
+      <%= @user.email %>
+    </div>
+    <div class = "col-md-3">
+      <%= @user.comments.count %>
+    </div>
+    <div class = "col-md-3">
+      <%= @user.links.count %>
+    </div>
+  </div>
 
-<p>
-  <strong>Comment Count:</strong>
-  <%= @user.comments.count %>
-</p>
+  <div class="row">
+    <%= link_to 'New Link', new_link_path %>
+  </div>
+</div>
 
-<p>
-  <strong>Links submitted</strong>
-  <%= @user.links.count %>ß
-</p>
-
-
-<!-- add karma count in here -->
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', :back %>
+<%= link_to 'Back', boards_path %>

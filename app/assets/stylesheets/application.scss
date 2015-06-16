@@ -1,9 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-
-
-
 header {
   background-color: #9E9E9E;
   height: 3em;
@@ -14,8 +11,7 @@ header {
 body {
   color: #3B3A3A;
   background-color: #C9C9C9;
-  width:100%;
-  margin: 0px;
+  width: 100%;
 }
 
 .container-fluid {
@@ -43,12 +39,27 @@ body {
   margin-top: -5px;
 }
 
-.comments {
-  border: 1px solid #3B3A3A;
+.board_topic {
+  font-size: 30px;
+  font-weight: bold;
+  background-color: #60676B;
+  text-align: center;
+}
+
+.user_name{
+  font-style: italic;
+  color: #ABAB9A;
+}
+
+
+.comment {
+  background-color: #D3E1EA;
+  height: 200%;
 }
 
 .side_panel_image {
 }
+
 .header_image {
   font-size: 20px;
 }
@@ -59,9 +70,6 @@ body {
 
 .header_image a{
   text-decoration: none;
-}
-
-.header_login_area {
 }
 
 footer {
