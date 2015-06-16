@@ -17,6 +17,8 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     @comment = Comment.new
     @user = current_user
+    # @comments = Comment.
+    # @vote = Vote.new
   end
 
   # GET /links/new

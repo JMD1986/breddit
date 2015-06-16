@@ -18,33 +18,47 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-    <header>
-      <div class="header_image">
-        <a href="/boards"><%= image_tag("Sandwich_32.png", :alt => "Breddit") %> Breddit.com
-        </a>
+
+
+<body>
+  <header>
+    <div class="row">
+        <div class="col-md-2">
+          <div class="header_image">
+          <a href="/boards"><%= image_tag("Sandwich_32.png", :alt => "Breddit") %> Breddit.com
+          </a>
+        </div>
       </div>
-      <div class="header_login_area">
+      <div class="col-md-8">
+      </div>
+      <div class="col-md-2">
+        <div class="header_login_area">
         <% if logged_in? %>
           <%= link_to 'Logout', logout_path %>
         <% else %>
           <%= link_to 'Login', login_path %>
       <% end %>
       </div>
-      <div class="header_search_bar">
-      </div>
-    </header>
-    <div class = "side_panel">
-      <div class="side_panel_image">
+    </div>
+  </header>
+
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-10"><%= yield %></div>
+    <div class="side_panel">
+      <div class="col-md-2">
         <%= image_tag("Sandwich_128.png") %>
-      </div>
-      <div class = "side_panel_text">
         Breddit is a website dedicated to delivering content that only appeals to you. Vote on submissions based on whether or not they interest you! click on the toaster if you think it's a quality submission.
       </div>
-
     </div>
+  </div>
+</div>
 
-  <%= yield %>
 <footer>
 </footer>
 </body>

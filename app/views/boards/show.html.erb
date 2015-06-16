@@ -1,13 +1,40 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Topic:</strong>
-  <%= @board.topic %>
-</p>
 
-<% @board.links.each do |link| %>
-<p><%=link_to link.title, link%> | <%= link.user.name %></p>
-<% end %>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <%= @board.topic %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-1">Toasts</div>
+    <div class="col-md-4">Title</div>
+    <div class="col-md-2">User</div>
+  </div>
+  <% @board.links.each do |link| %>
+  <div class = "row">
+
+      <div class="col-md-1">
+        <%= link_to image_tag("Bread_toaster_16.png"), votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %><%= link.votes.count %></td>
+      </div>
+    <div class = "col-md-4">
+     <%= link_to link.title, link %>
+    </div>
+    <div class = "col-md-2">
+      <%= link_to @user.name, @user %>
+    </div>
+  </div>
+  <% end %>
+
+  <div class="row">
+    <%= link_to 'New Link', new_link_path %>
+  </div>
+</div>
 
 <%= link_to 'Back', boards_path %>
 

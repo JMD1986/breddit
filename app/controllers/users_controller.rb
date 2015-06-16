@@ -11,7 +11,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @comment = Comment.all
-    @user = current_user
+    @user = User.find(params[:id])
     @posts = Comment.all
   end
 

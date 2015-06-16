@@ -12,25 +12,19 @@ class BoardsController < ApplicationController
     @comment = Comment.new
   end
 
-  def frontpage
-  end
 
   # GET /boards/1
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
     @link = Link.new
+    @user = current_user
   end
 
   # GET /boards/new
   def new
     authenticate_user!
-
     @board = Board.new
-  end
-
-  # GET /boards/1/edit
-  def edit
   end
 
   # POST /boards
