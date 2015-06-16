@@ -29,10 +29,11 @@ body {
 
 .side_panel {
   background-color: #3B3A3A;
+  // why do I need to set the width in order for the to stay put?
   width: 200px;
   float: right;
   right: 0px;
-  height: 100%;
+  min-height: 800px;
   bottom: 0px;
   color:#C9C9C9;
   font-size: 14px;
@@ -57,9 +58,13 @@ body {
   height: 200%;
 }
 
-.side_panel_image {
+.side_bar_image {
+  display: inline-block;
 }
 
+.side_bar_text {
+  display:inline-block;
+}
 .header_image {
   font-size: 20px;
 }

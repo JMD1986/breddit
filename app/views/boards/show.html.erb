@@ -11,6 +11,7 @@
     <div class="col-md-1">Toasts</div>
     <div class="col-md-4">Title</div>
     <div class="col-md-2">User</div>
+    <div class="col-md-2">Replies</div>
   </div>
   <% @board.links.each do |link| %>
   <div class = "row">
@@ -23,6 +24,9 @@
     </div>
     <div class = "col-md-2">
       <%= link_to @user.name, @user %>
+    </div>
+    <div class="col-md-2">
+      <%= link.comments.count %>
     </div>
   </div>
   <% end %>
