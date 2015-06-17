@@ -4,7 +4,6 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    authenticate_user!
     @links = Link.all.sort_by { |link| link.votes.count }.reverse
     @vote = Vote.new
     @comment = Comment.new
