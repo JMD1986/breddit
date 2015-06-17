@@ -6,6 +6,23 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-boards = Board.create([{topic :totally "subjective opinions stated as fact"}, {topic:, "libertarian pipedreams"}, {topic:, "argue with a stranger"}, {topic: "sweeping generalizations"}])
+20.times do
 
-topic = Topic.create([{}])
+board = Board.create(topic: Faker::Lorem.word)
+
+
+password = Faker::Internet.password
+user = User.create(name: Faker::Internet.user_name,
+                   password: password,
+      password_confirmation: password,
+                      email: Faker::Internet.safe_email)
+
+
+link = Link.create(user_id: user.id, board_id: board.id,
+                     title: Faker::Lorem.sentence(3),
+                      info: Faker::Lorem.paragraph(2))
+
+comment = Comment.create(user_id: user.id, link_id: link.id,
+                            body: Faker::Lorem.paragraph(2))
+
+end
