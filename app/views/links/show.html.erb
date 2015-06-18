@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container">
   <div class="row">
     <div class="col-md-4">
       <div class="board_topic">
@@ -53,12 +53,13 @@
     <%= f.hidden_field :user_id, :value => @user.id %>
     <%= f.text_area :body, placeholder: "Tell us how you really feel" %>
 
+
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <button class="btn btn-6 btn-6d"><%= f.submit %></button>
+<% end %>
+
   </div>
 </div>
 
-<% end %>
 
 

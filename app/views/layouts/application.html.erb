@@ -23,13 +23,13 @@
 <body>
   <header>
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-md-4">
           <div class="header_image">
-          <a href="/boards"><%= image_tag("Sandwich_32.png", :alt => "Breddit") %> Breddit.com
+          <a class="link link--kukuri" href="/boards">Breddit.com <%= image_tag("Sandwich_32.png", :alt => "Breddit") %>
           </a>
         </div>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-6">
       </div>
       <div class="col-md-2">
         <div class="header_login_area">
@@ -42,27 +42,44 @@
     </div>
   </header>
 
-<!-- why does this have padding!?!?! -->
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-10"><%= yield %></div>
-    <div class="side_panel">
-      <div class="col-md-2">
-        <div class="side_bar_image">
-          <%= image_tag("Sandwich_128.png") %>
-        </div>
-        <div="side_bar_text">
-          <div class ="side_bar_links">
+    <!-- why does this have padding!?!?! -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-10"><%= yield %></div>
+          <div class="side_panel">
+            <div class="col-md-2">
+              <div class="side_bar_image">
+              <%= image_tag("Sandwich_128.png") %></div>
+              <div="side_bar_text">
+                <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+                  <h3>Menu</h3>
+                  <a href="/boards/new">New Board</a>
+                  <a href="/links/new">New Post</a>
+                  <a href="/users/new">New User</a>
+                </nav>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      </div>
-      </div>
     </div>
-  </div>
-</div>
 
-<footer>
-</footer>
-</body>
+  <footer>
+  </footer>
+   <script src="jquery.js"></script>
+    <script>
+
+    $( document ).ready(function() {
+
+    $( "a" ).click(function( event ) {
+
+        alert( "Thanks for visiting!" );
+
+    });
+
+});
+
+    </script>
+  </body>
 </html>

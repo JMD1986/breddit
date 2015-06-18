@@ -17,7 +17,7 @@ class BoardsController < ApplicationController
   # GET /boards/1.json
   def show
     @board = Board.find(params[:id])
-    @link = Link.new
+    @link = Link.all.sort_by { |link| link.votes.count }.reverse
     @user = current_user
   end
 
