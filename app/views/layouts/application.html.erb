@@ -20,13 +20,15 @@
   </head>
 
 
-<body>
+<body class="cbp-spmenu-push">
   <header>
     <div class="row">
         <div class="col-md-4">
           <div class="header_image">
-          <a class="link link--kukuri" href="/boards">Breddit.com <%= image_tag("Sandwich_32.png", :alt => "Breddit") %>
+            <%= image_tag("Sandwich_32.png", :alt => "Breddit") %>
+          <a class="link link--kukuri" href="/boards">Breddit.com
           </a>
+
         </div>
       </div>
       <div class="col-md-6">
@@ -46,13 +48,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-md-10"><%= yield %></div>
-          <div class="side_panel">
+          <div class="side_panel" id="side_panel">
             <div class="col-md-2">
-              <div class="side_bar_image">
-              <%= image_tag("Sandwich_128.png") %></div>
-              <div="side_bar_text">
+                <h2 id="h2"><%= image_tag("Sandwich_128.png") %></h2>
+                <div class="cbp-spmenu-open">
                 <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-                  <h3>Menu</h3>
                   <a href="/boards/new">New Board</a>
                   <a href="/links/new">New Post</a>
                   <a href="/users/new">New User</a>
@@ -67,19 +67,11 @@
 
   <footer>
   </footer>
-   <script src="jquery.js"></script>
-    <script>
-
-    $( document ).ready(function() {
-
-    $( "a" ).click(function( event ) {
-
-        alert( "Thanks for visiting!" );
-
-    });
-
-});
-
-    </script>
+    <script src="jquery.min.js"></script>
+    <script>$( "#side_panel" ).click(function() {
+  $( "h2" ).hide( "slow", function() {
+    alert( "Animation complete." );
+  });
+});</script>
   </body>
 </html>
