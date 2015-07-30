@@ -14,7 +14,8 @@
   <% @links.each do |link| %>
   <div class = "row">
     <div class="col-md-1">
-      <%= link_to image_tag("Bread_toaster_16.png"), votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %><%= link.votes.count %></td>
+      <%= link_to image_tag("Bread_toaster_16.png"), votes_path(:vote => {:link_id => link.id, :up => true}), :method => :post %>
+      <%= link.votes.count %></td>
     </div>
     <div class = "col-md-4">
      <%= link_to link.title, link %>
